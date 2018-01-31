@@ -64,7 +64,7 @@ namespace UserMicroService.DataAccess
 
         private static void FillData(SqlCommand command, User user)
         {
-            command.AddParameter("@Id", SqlDbType.Int, user.Id);
+            //command.AddParameter("@Id", SqlDbType.Int, user.Id);
             command.AddParameter("@FirstName", SqlDbType.NVarChar, user.FirstName);
             command.AddParameter("@LastName", SqlDbType.NVarChar, user.LastName);
             command.AddParameter("@Email", SqlDbType.NVarChar, user.Email);
@@ -216,7 +216,8 @@ namespace UserMicroService.DataAccess
                     FillData(command, user);
                     connection.Open();
                     command.ExecuteNonQuery();
-                    return GetUser(user.Id);
+                    //return GetUser(user.Id);
+                    return user;
 
                     int id = 0;
                     using (SqlDataReader reader = command.ExecuteReader())
