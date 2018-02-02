@@ -16,7 +16,7 @@ namespace UserMicroService.Tests
         public void GetUsersSuccess()
         {
             List<User> users = UserDB.GetUsers(active);
-            Assert.AreEqual(users.Count, 3);
+            Assert.AreEqual(users.Count, 6);
             //ocekivani broj korisnika (active)
         }
 
